@@ -26,8 +26,8 @@ build {
   provisioner "shell" {
     inline = [
       "sudo apt update -y",
-      "sudo apt install -y httpd",
-      "sudo systemctl start httpd"
+      "sudo apt install -y nginx",
+      "sudo systemctl start nginx"
 #      "sudo systemctl enable httpd"
     ]
   }
