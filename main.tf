@@ -8,7 +8,7 @@ data "aws_ami" "latest_packer" {
 
   filter {
     name   = "name"
-    values = ["my-custom-ami-*"]
+    values = ["custom-ami-*"]
   }
 }
 
