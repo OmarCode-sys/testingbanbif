@@ -11,7 +11,7 @@ source "amazon-ebs" "example" {
   ami_name      = "my-custom-ami-{{timestamp}}"
   instance_type = "t2.micro"
   region        = "us-east-1"
-  source_ami    = "ami-0c55b159cbfafe1f0"  # Ubuntu 20.04 LTS
+  source_ami    = "ami-0c078c0b25ad46e40"  # Ubuntu 22.04 LTS
   ssh_username  = "ubuntu"
 
   tags = {
