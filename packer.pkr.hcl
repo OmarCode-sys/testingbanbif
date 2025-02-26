@@ -7,7 +7,7 @@ packer {
   }
 }
 
-source "amazon-ebs" "example" {
+source "amazon-ebs" "ubuntu" {
   ami_name      = "my-custom-ami-{{timestamp}}"
   instance_type = "t2.micro"
   region        = "us-east-1"
@@ -21,11 +21,11 @@ source "amazon-ebs" "example" {
 }
 
 build {
-  sources = ["source.amazon-ebs.example"]
+  sources = ["source.amazon-ebs.ubuntu"]
 
   provisioner "shell" {
     inline = [
-      "sudo apt update",
+      "sudo apt update -y",
       "sudo apt install -y nginx",
       "sudo systemctl enable nginx"
     ]
