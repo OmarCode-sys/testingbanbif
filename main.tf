@@ -12,7 +12,7 @@ data "aws_ami" "latest_packer" {
   }
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "myweb" {
   ami           = data.aws_ami.latest_packer.id
   instance_type = "t2.micro"
 
@@ -26,8 +26,8 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_security_group" "website" {
-  name        = "website"
+resource "aws_security_group" "myweb" {
+  name        = "myweb"
   description = "Permite SSH y HTTP"
 
   ingress {
