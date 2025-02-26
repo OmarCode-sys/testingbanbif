@@ -8,7 +8,7 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "my-custom-ami-{{timestamp}}"
+  ami_name      = "custom-ami-{{timestamp}}"
   instance_type = "t2.micro"
   region        = "us-east-1"
   source_ami    = "ami-0c078c0b25ad46e40"  # Ubuntu 22.04 LTS
@@ -28,6 +28,7 @@ build {
       "sudo apt update -y",
       "sudo apt install -y nginx",
       "sudo systemctl enable nginx"
+      "sudo systemctl start nginx"
     ]
   }
 }
