@@ -16,6 +16,9 @@ jobs:
       - name: Instalar Packer
         uses: hashicorp/setup-packer@main
 
+      - name: Iniciar Packer
+        run: packer init .
+
       - name: Validar configuración de Packer
         run: packer validate packer.pkr.hcl
 
