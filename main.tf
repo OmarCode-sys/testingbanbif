@@ -26,8 +26,8 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_security_group" "web" {
-  name        = "web"
+resource "aws_security_group" "website" {
+  name        = "website"
   description = "Permite SSH y HTTP"
 
   ingress {
